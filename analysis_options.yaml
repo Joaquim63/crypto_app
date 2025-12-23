@@ -21,8 +21,44 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    # Prefere aspas simples para strings, promovendo consistência.
+    - prefer_single_quotes
+
+    # Garante que todos os construtores de widgets tenham uma chave (key), importante para otimização e testes.
+    - use_key_in_widget_constructors
+
+    # Incentiva o uso de construtores `const` quando possível, o que melhora a performance do Flutter.
+    - prefer_const_constructors
+    - prefer_const_literals_to_create_immutables
+    - prefer_const_declarations
+
+    # Ajuda a evitar widgets `Container` desnecessários que não adicionam valor visual ou de layout.
+    - avoid_unnecessary_containers
+
+    # Garante que os tipos de retorno das funções sejam sempre declarados explicitamente, melhorando a legibilidade e segurança de tipo.
+    - always_declare_return_types
+
+    # Incentiva a declaração explícita de tipos para variáveis locais, melhorando a legibilidade.
+    - always_specify_local_types
+
+    # Garante que os métodos de override sejam marcados com @override.
+    - annotate_overrides
+
+    # Evita a declaração de variáveis que não são usadas.
+    - unused_local_variable
+    - unused_field
+
+    # Promove a consistência na nomenclatura de arquivos.
+    - file_names
+
+    # Ajuda a manter a consistência na nomenclatura de classes.
+    - camel_case_types
+
+    # Ajuda a manter a consistência na nomenclatura de variáveis e funções.
+    - camel_case_function_names
+
+    # Garante que os parâmetros nomeados sejam sempre obrigatórios, a menos que explicitamente marcados como opcionais.
+    - require_trailing_commas
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
